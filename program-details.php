@@ -4,7 +4,6 @@ ini_set('display_errors', 1);
 
 include 'includes/db.php';
 
-// Handle form submission
 if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     $program_id = $_POST['program_id'];
     $student_name = mysqli_real_escape_string($conn, $_POST['name']);
@@ -27,7 +26,6 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
     }
 }
 
-// Get the program ID from the URL
 if (isset($_GET['id'])) {
     $program_id = $_GET['id'];
 } else {
@@ -48,7 +46,6 @@ if (!$program) {
     die("Program not found.");
 }
 
-// Fetch modules for the program
 $sql = "SELECT Modules.ModuleID, Modules.ModuleName, Modules.Description, Modules.ModuleLeaderID, ProgrammeModules.Year 
         FROM ProgrammeModules 
         JOIN Modules ON ProgrammeModules.ModuleID = Modules.ModuleID 
@@ -107,18 +104,18 @@ foreach ($modules as $module) {
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title><?php echo $program['ProgrammeName']; ?> - Program Details</title>
-    <!-- Bootstrap CSS -->
+    
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body class="container">
     <div class="container mt-5">
-        <h1 class="text-center mb-4"><?php echo $program['ProgrammeName']; ?></h1>
+        <h1 class="text-center mb-4 text-light"><?php echo $program['ProgrammeName']; ?></h1>
 
-        <!-- Program Description -->
         <div class="col-6 mx-auto">
-            <div class="card mb-4 bg-secondary">
+            <div class="card mb-4 ">
                 <div class="card-body">
-                    <h5 class="card-title">Program Description</h5>
+                    <h5 class="card-title t">Program Description</h5>
                     <p class="card-text"><?php echo $program['Description']; ?></p>
                 </div>
             </div>
@@ -127,7 +124,7 @@ foreach ($modules as $module) {
         <div class="row">
             <?php for ($year = 1; $year <= 3; $year++): ?>
                 <div class="col-md-4 mb-4">
-                    <div class="card h-100 bg-secondary">
+                    <div class="card h-100">
                         <div class="card-body">
                             <h5 class="card-title">Year <?php echo $year; ?></h5>
                             <?php if (isset($modules_by_year[$year])): ?>
@@ -150,7 +147,7 @@ foreach ($modules as $module) {
 
         <div class="row">
             <div class="col-6 mb-4">
-                <div class="card mb-4 h-100 bg-secondary">
+                <div class="card mb-4 h-100">
                     <div class="card-body">
                         <h5 class="card-title">Faculty Members</h5>
                         <ul>
@@ -164,7 +161,7 @@ foreach ($modules as $module) {
             </div>
 
             <div class="col-6 mb-4">
-                <div class="card h-100 bg-secondary">
+                <div class="card h-100 ">
                     <div class="card-body">
                         <h5 class="card-title">Register Your Interest</h5>
                         <?php if (isset($success_message)): ?>
@@ -177,25 +174,20 @@ foreach ($modules as $module) {
                             </div>
                         <?php endif; ?>
                         <form method="POST" action="">
-                            <!-- Hidden field to store the program ID -->
                             <input type="hidden" name="program_id" value="<?php echo $program['ProgrammeID']; ?>">
 
-                            <!-- Name field -->
                             <div class="mb-3">
                                 <label for="name" class="form-label">Name</label>
                                 <input type="text" class="form-control" id="name" name="name" required>
                             </div>
 
-                            <!-- Email field -->
                             <div class="mb-3">
                                 <label for="email" class="form-label">Email</label>
                                 <input type="email" class="form-control" id="email" name="email" required>
                             </div>
 
-                            <!-- Submit button -->
                             <button type="submit" class="btn btn-light">Register Interest</button>
 
-                            <!-- Back to Programs button -->
                             <div class="mb-3 mt-4">
                                 <a href="index.php" class="btn btn-light">Back to Programs</a>
                             </div>
@@ -205,8 +197,6 @@ foreach ($modules as $module) {
             </div>
         </div>
     </div>
-
-    <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

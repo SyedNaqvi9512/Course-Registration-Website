@@ -13,7 +13,7 @@ $programs = mysqli_fetch_all($result, MYSQLI_ASSOC);
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Student Course Hub</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
-    <link href="assets/styles.css" rel="stylesheet">
+    <link href="assets/css/style.css" rel="stylesheet">
 </head>
 <body>
 
@@ -36,7 +36,7 @@ $programs = mysqli_fetch_all($result, MYSQLI_ASSOC);
     </nav>
 
     <div class="container mt-5">
-        <h1 class="text-center mb-4" > DMU Available Programs</h1>
+        <h1 class="text-center mb-4 text-light" > DMU Available Programs</h1>
 
         <div class="row mb-4">
             <div class="col-md-6">
