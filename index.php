@@ -17,20 +17,20 @@ $programs = mysqli_fetch_all($result, MYSQLI_ASSOC);
 </head>
 <body>
 
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
+    <nav class="navbar navbar-expand-lg  bg-transparent">
         <div class="container-fluid">
-            <a class="navbar-brand" href="index.php">Student Course Hub</a>
+            <a class="navbar-brand text-light" href="index.php">Student Course Hub</a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto">
-                    <li class="nav-item">
+                <div class="navbar-nav ms-auto">
+            
+                        <a class="nav-link text-light " href="login2.php">Staff Login</a>
                         <a class="nav-link text-light " href="login.php">Admin Login</a>
-                    </li>
-                    <li class="nav-item">
-                    </li>
-                </ul>
+                        <a class="nav-link text-light " href="withdraw-interest.php">Withdraw Interest</a>
+                                    
+                </div>
             </div>
         </div>
     </nav>

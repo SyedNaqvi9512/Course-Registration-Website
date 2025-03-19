@@ -69,14 +69,11 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST') {
                                 <label for="password" class="form-label">Password</label>
                                 <input type="password" class="form-control" id="password" name="password" required>
                             </div>
-                            <div class="col-6 mx-auto">
-                            <button type="submit" class="btn btn-success w-50">Login</button>
-                        </div>
+                            <button type="submit" class="btn btn-success  mb-4">Login</button>
                         </form>
-
-                        <div class="mt-3 text-center mx-auto">
+                        
                             <a href="index.php" class="btn btn-success">Back to Home</a>
-                        </div>
+    
                     </div>
                 </div>
             </div>

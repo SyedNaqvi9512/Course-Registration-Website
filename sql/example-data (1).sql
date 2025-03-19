@@ -53,6 +53,8 @@ CREATE TABLE ProgrammeModules (
     ProgrammeID INTEGER,
     ModuleID INTEGER,
     Year INTEGER,
+    FOREIGN KEY (ProgrammeID) REFERENCES Programmes(ProgrammeID),
+    FOREIGN KEY (ModuleID) REFERENCES Modules(ModuleID)
 );
 
 CREATE TABLE InterestedStudents (

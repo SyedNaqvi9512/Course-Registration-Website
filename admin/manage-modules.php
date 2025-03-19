@@ -76,10 +76,7 @@ if (isset($_GET['delete_module'])) {
                 <label for="module_description" class="form-label">Description</label>
                 <textarea class="form-control" id="module_description" name="module_description" required></textarea>
             </div>
-            <div class="mb-3">
-                <label for="module_image" class="form-label">Image URL (Optional)</label>
-                <input type="text" class="form-control" id="module_image" name="module_image">
-            </div>
+            
             <button type="submit" name="add_module" class="btn btn-success">Add Module</button>
         </form>
         <a href="dashborad.php" class="btn btn-success mb-3">Back to Dashboard</a>

@@ -90,10 +90,7 @@ if ($_SERVER['REQUEST_METHOD'] == 'POST' && isset($_POST['update_program'])) {
                 <label for="program_description" class="form-label text-light">Description</label>
                 <textarea class="form-control" id="program_description" name="program_description" required><?php echo $program['Description']; ?></textarea>
             </div>
-            <div class="mb-3">
-                <label for="program_image" class="form-label text-light">Image URL (Optional)</label>
-                <input type="text" class="form-control" id="program_image" name="program_image" value="<?php echo $program['Image']; ?>">
-            </div>
+        
             <button type="submit" name="update_program" class="btn btn-success mb-4">Update Program</button>
           
         </form>

@@ -87,10 +87,7 @@ if (isset($_GET['delete_program'])) {
                 <label for="program_description" class="form-label">Description</label>
                 <textarea class="form-control" id="program_description" name="program_description" required></textarea>
             </div>
-            <div class="mb-3">
-                <label for="program_image" class="form-label">Image URL (Optional)</label>
-                <input type="text" class="form-control" id="program_image" name="program_image">
-            </div>
+            
             <button type="submit" name="add_program" class="btn btn-success">Add Program</button>
         </form>
         <a href="dashborad.php" class="btn btn-success mb-3">Back to Dashboard</a>
