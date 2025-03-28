@@ -74,6 +74,8 @@ INSERT INTO Levels (LevelID, LevelName) VALUES
 
 INSERT INTO admins (admin_email, admin_password)
 VALUES ('AliShah12345@gmail.com', '$2y$10$92IXUNpkjO0rOQ5byMi.Ye4oKoEa3Ro9llC/.og/at2.uheWG/igi');
+
+UPDATE Staff SET password = SHA2('default123', 256);
 -- Staff
 INSERT INTO Staff (StaffID, Name) VALUES
 (1, 'Dr. Alice Johnson'), (2, 'Dr. Brian Lee'), (3, 'Dr. Carol White'), (4, 'Dr. David Green'),
